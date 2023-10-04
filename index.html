@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fez Translator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>Alphabet</div>
+    <div id="charContainer">
+      <div id="charButtonContainer">
+        <p>A</p>
+        <button class="'icon-button">
+          <svg id="charIcon">
+            <use href="/assets/alphabet_symbols.svg#a-char" />
+          </svg>
+        </button>
+      </div>
+      <div id="charButtonContainer">
+        <p>B</p>
+        <button>
+          <svg id="charIcon">
+            <use href="/assets/alphabet_symbols.svg#b-char" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <p>start adding characters by clicking on the buttons above...</p>
+    <button class="text-button">copy</button>
+    <button class="text-button">Restart</button>
+    <script src="scripts.js"></script>
+  </body>
+</html>

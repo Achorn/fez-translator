@@ -1,0 +1,60 @@
+:root {
+  --bg_color: #9471a2;
+  --ds_color: #684c71;
+  --pr_color: #4a3550;
+  background-color: var(--bg_color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#charContainer {
+  display: flex; /* or inline-flex */
+  /* flex-wrap: wrap; */
+  flex-direction: row;
+}
+#charButtonContainer {
+  width: 90px;
+  display: inline;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  margin: 4px;
+  font-family: futura-pt, sans-serif;
+  background-color: var(--bg_color);
+  color: var(--pr_color);
+  border: 3.5px solid var(--pr_color);
+  border-radius: 10px;
+  font-weight: bold;
+  /* padding: 12px 20px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 2px 4px var(--pr_color);
+  cursor: pointer;
+}
+.icon-button {
+  padding: 5px 10px;
+}
+.text-button {
+  padding: 12px 20px;
+}
+
+button:hover {
+  transform: translateY(1px);
+  box-shadow: 2px 3px var(--pr_color);
+}
+button:active {
+  /* background-color: #3e8e41; */
+  box-shadow: 1px 0px var(--pr_color);
+  transform: translateY(4px);
+}
+
+#charIcon {
+  fill: var(--pr_color);
+  height: 40px;
+  width: 40px;
+}
