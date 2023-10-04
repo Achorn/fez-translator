@@ -64,3 +64,7 @@ button:active {
   height: 40px;
   width: 40px;
 }
+
+#spaceButton {
+  padding: 12px 100px;
+}

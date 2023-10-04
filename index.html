@@ -8,36 +8,42 @@
   </head>
   <body>
     <h1>Fez Translator</h1>
-    <p>start adding characters by clicking on the buttons above...</p>
+    <p id="translatedText">
+      start adding characters by clicking on the buttons above...
+    </p>
 
     <div id="charContainer">
       <div id="charButtonContainer">
         <p>A</p>
-        <button class="'icon-button">
-          <svg id="charIcon">
+        <button class="icon-button">
+          <svg name="a" id="charIcon">
             <use href="/assets/alphabet_symbols.svg#a-char" />
           </svg>
         </button>
       </div>
       <div id="charButtonContainer">
         <p>B</p>
-        <button>
-          <svg id="charIcon">
+        <button class="icon-button">
+          <svg name="b" id="charIcon">
             <use href="/assets/alphabet_symbols.svg#b-char" />
           </svg>
         </button>
       </div>
       <div id="charButtonContainer">
         <p>C</p>
-        <button>
-          <svg id="charIcon">
+        <button class="icon-button">
+          <svg name="c" id="charIcon">
             <use href="/assets/alphabet_symbols.svg#c-char" />
           </svg>
         </button>
       </div>
     </div>
-    <button class="text-button">copy</button>
-    <button class="text-button">Restart</button>
+    <div>
+      <button id="spaceButton" class="text-button">space</button>
+    </div>
+    <button id="copyButton" class="text-button">copy</button>
+    <button id="deleteButton" class="text-button">delete</button>
+    <button id="restartButton" class="text-button">Restart</button>
     <script src="scripts.js"></script>
   </body>
 </html>
