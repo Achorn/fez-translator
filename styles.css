@@ -1,7 +1,13 @@
 :root {
+  /* --bg_color: #9471a2; */
   --bg_color: #9471a2;
   --ds_color: #684c71;
   --pr_color: #4a3550;
+  /* --pr_color: #4a3550; */
+  font-family: futura-pt, sans-serif;
+  font-weight: bold;
+  color: var(--pr_color);
+
   background-color: var(--bg_color);
   display: flex;
   align-items: center;
@@ -10,7 +16,7 @@
 }
 #charContainer {
   display: flex; /* or inline-flex */
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   flex-direction: row;
 }
 #charButtonContainer {
@@ -23,12 +29,12 @@
 }
 button {
   margin: 4px;
-  font-family: futura-pt, sans-serif;
   background-color: var(--bg_color);
   color: var(--pr_color);
   border: 3.5px solid var(--pr_color);
   border-radius: 10px;
   font-weight: bold;
+
   /* padding: 12px 20px; */
   text-align: center;
   text-decoration: none;
