@@ -6,7 +6,7 @@ let restartButton = document.getElementById("restartButton");
 let translatedText = "";
 
 for (let i = 0; i < charButtons.length; i++) {
-  let char = charButtons[i].childNodes[1].getAttribute("name");
+  let char = charButtons[i].getAttribute("name");
   charButtons[i].addEventListener("click", (e) => addCharToString(char));
 }
 
