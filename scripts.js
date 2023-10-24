@@ -62,10 +62,10 @@ function displayWarning() {
 }
 
 function removeWarning() {
+  localStorage.setItem("visited", true);
   document.getElementById("spoiler-container").remove();
 }
 
 if (!localStorage.getItem("visited")) {
-  localStorage.setItem("visited", true);
   displayWarning();
 }
