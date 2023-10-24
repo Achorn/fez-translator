@@ -11,7 +11,7 @@
 }
 body {
   margin: 0;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,7 +117,7 @@ button:active {
 }
 
 .bordered-container {
-  margin: 10px;
+  /* margin: 10px; */
   border: 4px solid var(--pr_color);
   padding: 20px;
   /* max-width: 400px; */

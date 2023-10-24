@@ -28,7 +28,7 @@ function addCharToString(char) {
 
 function displayWarning() {
   let spoilerContainer = document.createElement("div");
-  spoilerContainer.style.cssText = `position: absolute;width: 100vw;height: 100vh;display:flex; aligh-items: center; justify-content: center`;
+  spoilerContainer.style.cssText = `top:0px;position: fixed;width: 100vw;height: 100vh;display:flex; aligh-items: center; justify-content: center`;
   spoilerContainer.setAttribute("id", "spoiler-container");
   document.body.appendChild(spoilerContainer);
 
@@ -65,4 +65,7 @@ function removeWarning() {
   document.getElementById("spoiler-container").remove();
 }
 
-displayWarning();
+if (!localStorage.getItem("visited")) {
+  localStorage.setItem("visited", true);
+  displayWarning();
+}
