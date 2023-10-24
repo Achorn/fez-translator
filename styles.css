@@ -1,9 +1,8 @@
 :root {
-  /* --bg_color: #9471a2; */
   --bg_color: #9471a2;
   --ds_color: #684c71;
   --pr_color: #4a3550;
-  /* --pr_color: #4a3550; */
+
   font-family: futura-pt, sans-serif;
   font-weight: bold;
   color: var(--pr_color);
@@ -11,6 +10,8 @@
   background-color: var(--bg_color);
 }
 body {
+  margin: 0;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,4 +106,34 @@ button:active {
 
 .twoSeventyDeg {
   transform: rotate(-270deg);
+}
+
+.fuzzy-cover {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  /* background-color: red; */
+  backdrop-filter: blur(4px);
+}
+
+.bordered-container {
+  /* margin: 10px; */
+  border: 4px solid var(--pr_color);
+  padding: 20px;
+  /* max-width: 400px; */
+  /* width: 90vw; */
+  /* min-height: 20px; */
+  /* text-align:center; */
+  background: var(--bg_color);
+  border-radius: 20px;
+}
+
+.spoiler-box {
+  place-self: center;
+  position: absolute;
+  max-width: 400px;
+  width: 90vw;
+  min-height: 20px;
+  text-align: center;
+  overflow: hidden;
 }
