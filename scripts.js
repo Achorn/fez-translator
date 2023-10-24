@@ -25,3 +25,16 @@ function addCharToString(char) {
   translatedText += char;
   textDisplay.innerHTML = translatedText;
 }
+
+//
+function displayWarning() {
+  let fuzzyCover = document.createElement("div");
+  fuzzyCover.classList.add("fuzzy-cover");
+  // add fuzzy wrapper around everything
+  document.body.appendChild(fuzzyCover);
+  // add display box in front of it
+}
+
+function removeWarning() {}
+
+displayWarning();

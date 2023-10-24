@@ -1,9 +1,8 @@
 :root {
-  /* --bg_color: #9471a2; */
   --bg_color: #9471a2;
   --ds_color: #684c71;
   --pr_color: #4a3550;
-  /* --pr_color: #4a3550; */
+
   font-family: futura-pt, sans-serif;
   font-weight: bold;
   color: var(--pr_color);
@@ -11,6 +10,8 @@
   background-color: var(--bg_color);
 }
 body {
+  margin: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,4 +106,12 @@ button:active {
 
 .twoSeventyDeg {
   transform: rotate(-270deg);
+}
+
+.fuzzy-cover {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  /* background-color: red; */
+  backdrop-filter: blur(4px);
 }
