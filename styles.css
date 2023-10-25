@@ -18,6 +18,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  gap: 10px;
 }
 #charContainer {
   /* background-color: red; */
@@ -58,6 +59,7 @@ button {
 }
 .text-button {
   padding: 12px 20px;
+  font-weight: bolder;
 }
 
 button:hover {
@@ -145,4 +147,17 @@ button:active {
     opacity: 0;
     transform: scale(0);
   }
+}
+
+#entries-container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.entry {
+  padding: 20px;
+}
+
+.entry:hover {
+  transform: translate(2px, 2px);
 }

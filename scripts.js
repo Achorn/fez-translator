@@ -56,9 +56,6 @@ function displayWarning() {
   spoilerButton.innerHTML = "CONTINUE";
   spoilerButton.addEventListener("click", removeWarning);
   spoilerBox.appendChild(spoilerButton);
-
-  //add description
-  //add continue button
 }
 
 function removeWarning() {
@@ -72,3 +69,59 @@ function removeWarning() {
 if (!localStorage.getItem("visited")) {
   displayWarning();
 }
+
+//save entry
+
+let saveBtn = document.getElementById("saveButton");
+saveBtn.addEventListener("click", () => {
+  if (!translatedText) return;
+
+  //checklocalStorage
+  let entries = retrieveEntries();
+
+  let entry = {
+    id: entries.length + 1,
+    text: translatedText,
+    date: Date.now(),
+  };
+
+  entries.push(entry);
+  let json = JSON.stringify(entries);
+  console.log(json);
+  localStorage.setItem("entries", json);
+
+  translatedText = "";
+  textDisplay.innerHTML = translatedText;
+
+  updateEntriesDisplay();
+});
+
+function retrieveEntries() {
+  let json = localStorage.getItem("entries");
+  if (!json) return [];
+  let entries = JSON.parse(json);
+  return entries;
+}
+
+function updateEntriesDisplay() {
+  let entries = retrieveEntries();
+  console.log(entries);
+
+  //get entry display
+  let entriesDisplay = document.getElementById("entries-container");
+  entriesDisplay.innerHTML = "";
+  //clear entries
+  for (let entry of entries) {
+    let entryDiv = createHTMLEntry(entry);
+    entriesDisplay.appendChild(entryDiv);
+  }
+  //loop through entries create entry child
+}
+function createHTMLEntry(entry) {
+  let entryDiv = document.createElement("div");
+  entryDiv.classList.add("entry");
+  entryDiv.innerHTML = `"${entry.text}"`;
+  return entryDiv;
+}
+
+updateEntriesDisplay();
