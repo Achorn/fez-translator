@@ -46,10 +46,19 @@ function displayWarning() {
   spoilerBox.appendChild(title);
 
   //IMG
-  let image = document.createElement("img");
-  image.classList.add("fez-img");
-  image.src = "./assets/imgs/Gomez.webp";
-  spoilerBox.appendChild(image);
+  let imgContainer = document.createElement("div");
+  imgContainer.classList.add("fez-img-container");
+  spoilerBox.appendChild(imgContainer);
+
+  let gomezFrontImg = document.createElement("img");
+  gomezFrontImg.classList.add("fez-img", "fez-front");
+  gomezFrontImg.src = "./assets/imgs/Gomez.webp";
+  imgContainer.appendChild(gomezFrontImg);
+
+  let gomezBackImg = document.createElement("img");
+  gomezBackImg.classList.add("fez-img", "fex-back");
+  gomezBackImg.src = "./assets/imgs/Gomex-back.jpg";
+  imgContainer.appendChild(gomezBackImg);
 
   //DESCRIPTON
   let description = document.createElement("p");
