@@ -42,7 +42,7 @@ function displayWarning() {
 
   //add title
   let title = document.createElement("h1");
-  title.innerHTML = "SPOILER";
+  title.innerHTML = "SPOILER ALERT!";
   spoilerBox.appendChild(title);
 
   let description = document.createElement("p");
@@ -56,15 +56,11 @@ function displayWarning() {
   spoilerButton.innerHTML = "CONTINUE";
   spoilerButton.addEventListener("click", removeWarning);
   spoilerBox.appendChild(spoilerButton);
-
-  //add description
-  //add continue button
 }
 
 function removeWarning() {
   localStorage.setItem("visited", true);
   document.getElementById("spoiler-container").classList.add("zoom-dissapear");
-  // document.getElementById("spoiler-container").remove();
   setTimeout(() => {
     document.getElementById("spoiler-container").remove();
   }, 500);
@@ -73,3 +69,89 @@ function removeWarning() {
 if (!localStorage.getItem("visited")) {
   displayWarning();
 }
+
+//save entry
+
+let saveBtn = document.getElementById("saveButton");
+saveBtn.addEventListener("click", () => {
+  if (!translatedText) return;
+
+  //checklocalStorage
+  let entries = retrieveEntries();
+
+  let entry = {
+    id: createUID(),
+    text: translatedText,
+    date: Date.now(),
+  };
+
+  entries.push(entry);
+  saveEntries(entries);
+
+  translatedText = "";
+  textDisplay.innerHTML = translatedText;
+
+  updateEntriesDisplay();
+});
+
+const createUID = () => {
+  return Date.now().toString(36) + Math.random().toString(36).substr(2);
+};
+
+function retrieveEntries() {
+  let json = localStorage.getItem("entries");
+  if (!json) return [];
+  let entries = JSON.parse(json);
+  return entries;
+}
+
+function updateEntriesDisplay() {
+  let entries = retrieveEntries();
+
+  let entriesDisplay = document.getElementById("entries-container");
+  entriesDisplay.innerHTML = "";
+  for (let entry of entries) {
+    let entryDiv = createHTMLEntry(entry);
+    entriesDisplay.appendChild(entryDiv);
+  }
+}
+
+function createHTMLEntry(entry) {
+  let entryDiv = document.createElement("div");
+  entryDiv.classList.add("entry");
+
+  //text
+  let textDiv = document.createElement("div");
+  textDiv.innerHTML = `"${entry.text}"`;
+  entryDiv.appendChild(textDiv);
+
+  let delEntry = document.createElement("div");
+  delEntry.innerHTML = "X";
+  delEntry.classList.add("del-entry-btn");
+  delEntry.addEventListener("click", () => {
+    deleteEntry(entry.id);
+  });
+  entryDiv.appendChild(delEntry);
+  return entryDiv;
+}
+
+let deleteEntry = (id) => {
+  entries = retrieveEntries();
+  console.log("deleting entry");
+  for (let i = 0; i < entries.length; i++) {
+    if (id === entries[i].id) {
+      console.log("found entry");
+      entries.splice(i, 1);
+      saveEntries(entries);
+      updateEntriesDisplay();
+      return;
+    }
+  }
+};
+
+let saveEntries = (entries) => {
+  let json = JSON.stringify(entries);
+  localStorage.setItem("entries", json);
+};
+
+updateEntriesDisplay();
