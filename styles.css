@@ -1,7 +1,10 @@
 :root {
-  --bg_color: #9471a2;
+  /* --bg_color: #9471a2; */
+  /* --ds_color: #684c71; */
+  /* --pr_color: #4a3550;s */
+  --bg_color: white;
   --ds_color: #684c71;
-  --pr_color: #4a3550;
+  --pr_color: #684c71;
 
   font-family: futura-pt, sans-serif;
   font-weight: bold;
@@ -168,13 +171,18 @@ button:active {
   transform: translate(2px, 2px);
 }
 .entry:hover .del-entry-btn {
-  color: darkmagenta;
+  color: red;
 }
 .del-entry-btn {
-  color: darkmagenta;
+  color: red;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
   cursor: pointer;
   padding-left: 5px;
+}
+
+.fez-img {
+  border-radius: 10%;
+  width: 80%;
 }

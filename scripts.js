@@ -45,6 +45,13 @@ function displayWarning() {
   title.innerHTML = "SPOILER ALERT!";
   spoilerBox.appendChild(title);
 
+  //IMG
+  let image = document.createElement("img");
+  image.classList.add("fez-img");
+  image.src = "./assets/imgs/Gomez.webp";
+  spoilerBox.appendChild(image);
+
+  //DESCRIPTON
   let description = document.createElement("p");
   description.innerHTML =
     "This translator is intended for those who have already deciphered the language in the game “Fez”. If you have not already done so, I encourage you to go back and attempt it yourself. It’s part of the fun!";
@@ -69,8 +76,6 @@ function removeWarning() {
 if (!localStorage.getItem("visited")) {
   displayWarning();
 }
-
-//save entry
 
 let saveBtn = document.getElementById("saveButton");
 saveBtn.addEventListener("click", () => {
