@@ -80,7 +80,7 @@ saveBtn.addEventListener("click", () => {
   let entries = retrieveEntries();
 
   let entry = {
-    id: entries.length + 1,
+    id: createUID(),
     text: translatedText,
     date: Date.now(),
   };
@@ -94,6 +94,10 @@ saveBtn.addEventListener("click", () => {
   updateEntriesDisplay();
 });
 
+const createUID = () => {
+  return Date.now().toString(36) + Math.random().toString(36).substr(2);
+};
+
 function retrieveEntries() {
   let json = localStorage.getItem("entries");
   if (!json) return [];
@@ -103,17 +107,15 @@ function retrieveEntries() {
 
 function updateEntriesDisplay() {
   let entries = retrieveEntries();
-  console.log(entries);
 
-  //get entry display
   let entriesDisplay = document.getElementById("entries-container");
   entriesDisplay.innerHTML = "";
   for (let entry of entries) {
     let entryDiv = createHTMLEntry(entry);
     entriesDisplay.appendChild(entryDiv);
   }
-  //loop through entries create entry child
 }
+
 function createHTMLEntry(entry) {
   let entryDiv = document.createElement("div");
   entryDiv.classList.add("entry");
@@ -133,7 +135,19 @@ function createHTMLEntry(entry) {
   return entryDiv;
 }
 
-let deleteEntry = (id) => {};
+let deleteEntry = (id) => {
+  entries = retrieveEntries();
+  console.log("deleting entry");
+  for (let i = 0; i < entries.length; i++) {
+    if (id === entries[i].id) {
+      console.log("found entry");
+      entries.splice(i, 1);
+      saveEntries(entries);
+      updateEntriesDisplay();
+      return;
+    }
+  }
+};
 
 let saveEntries = (entries) => {
   let json = JSON.stringify(entries);
