@@ -33,6 +33,7 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   margin-bottom: 10px;
+  max-width: 450px;
 }
 #charButtonContainer {
   /* width: 90px; */
@@ -92,7 +93,7 @@ button:active {
   padding: 12px 100px;
   margin: 10px;
   width: 85vw;
-  max-width: 600px;
+  max-width: 450px;
 }
 
 .charIcon {
