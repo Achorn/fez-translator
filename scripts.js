@@ -86,9 +86,7 @@ saveBtn.addEventListener("click", () => {
   };
 
   entries.push(entry);
-  let json = JSON.stringify(entries);
-  console.log(json);
-  localStorage.setItem("entries", json);
+  saveEntries(entries);
 
   translatedText = "";
   textDisplay.innerHTML = translatedText;
@@ -110,7 +108,6 @@ function updateEntriesDisplay() {
   //get entry display
   let entriesDisplay = document.getElementById("entries-container");
   entriesDisplay.innerHTML = "";
-  //clear entries
   for (let entry of entries) {
     let entryDiv = createHTMLEntry(entry);
     entriesDisplay.appendChild(entryDiv);
@@ -120,8 +117,27 @@ function updateEntriesDisplay() {
 function createHTMLEntry(entry) {
   let entryDiv = document.createElement("div");
   entryDiv.classList.add("entry");
-  entryDiv.innerHTML = `"${entry.text}"`;
+
+  //text
+  let textDiv = document.createElement("div");
+  textDiv.innerHTML = `"${entry.text}"`;
+  entryDiv.appendChild(textDiv);
+
+  let delEntry = document.createElement("div");
+  delEntry.innerHTML = "X";
+  delEntry.classList.add("del-entry-btn");
+  delEntry.addEventListener("click", () => {
+    deleteEntry(entry.id);
+  });
+  entryDiv.appendChild(delEntry);
   return entryDiv;
 }
+
+let deleteEntry = (id) => {};
+
+let saveEntries = (entries) => {
+  let json = JSON.stringify(entries);
+  localStorage.setItem("entries", json);
+};
 
 updateEntriesDisplay();
