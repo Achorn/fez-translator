@@ -130,6 +130,15 @@ function createHTMLEntry(entry) {
   textDiv.innerHTML = `"${entry.text}"`;
   entryDiv.appendChild(textDiv);
 
+  let editEntryBtn = document.createElement("div");
+  editEntryBtn.innerHTML = "E";
+  editEntryBtn.classList.add("edit-entry-btn");
+  editEntryBtn.addEventListener("click", () => {
+    console.log("hello");
+    editEntry(entry.id);
+  });
+  entryDiv.appendChild(editEntryBtn);
+
   let delEntry = document.createElement("div");
   delEntry.innerHTML = "X";
   delEntry.classList.add("del-entry-btn");
@@ -152,6 +161,9 @@ let deleteEntry = (id) => {
       return;
     }
   }
+};
+let editEntry = (id) => {
+  alert("edit entry currently under construction");
 };
 
 let saveEntries = (entries) => {
