@@ -63,7 +63,11 @@ function displayWarning() {
 
 function removeWarning() {
   localStorage.setItem("visited", true);
-  document.getElementById("spoiler-container").remove();
+  document.getElementById("spoiler-container").classList.add("zoom-dissapear");
+  // document.getElementById("spoiler-container").remove();
+  setTimeout(() => {
+    document.getElementById("spoiler-container").remove();
+  }, 500);
 }
 
 if (!localStorage.getItem("visited")) {
