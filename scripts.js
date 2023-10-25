@@ -42,7 +42,7 @@ function displayWarning() {
 
   //add title
   let title = document.createElement("h1");
-  title.innerHTML = "SPOILER";
+  title.innerHTML = "SPOILER ALERT!";
   spoilerBox.appendChild(title);
 
   let description = document.createElement("p");
@@ -64,7 +64,6 @@ function displayWarning() {
 function removeWarning() {
   localStorage.setItem("visited", true);
   document.getElementById("spoiler-container").classList.add("zoom-dissapear");
-  // document.getElementById("spoiler-container").remove();
   setTimeout(() => {
     document.getElementById("spoiler-container").remove();
   }, 500);
