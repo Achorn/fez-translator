@@ -168,12 +168,27 @@ button:active {
   color: var(--bg_color);
 }
 
+.entry .edit-entry-btn {
+  color: var(--bg_color);
+}
 .entry:hover {
   transform: translate(2px, 2px);
 }
 .entry:hover .del-entry-btn {
   color: red;
 }
+.entry:hover .del-entry-btn:hover {
+  color: darkred;
+  transform: translate(0, -2px);
+}
+.entry:hover .edit-entry-btn {
+  color: orange;
+}
+.entry:hover .edit-entry-btn:hover {
+  color: lightcoral;
+  transform: translate(0, -2px);
+}
+
 .del-entry-btn {
   color: red;
   -webkit-user-select: none; /* Safari */
@@ -182,7 +197,19 @@ button:active {
   cursor: pointer;
   padding-left: 5px;
 }
+.del-entry-btn :hover {
+  transform: translate(-2px -2px);
+  color: pink;
+}
 
+.edit-entry-btn {
+  color: orange;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  cursor: pointer;
+  padding-left: 5px;
+}
 .fez-img {
   border-radius: 10%;
   width: 80%;
