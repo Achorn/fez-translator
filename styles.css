@@ -218,13 +218,13 @@ button:active {
   background-color: #231636;
   border-radius: 10%;
   aspect-ratio: 1/1;
-  width: 80%;
+  width: 65%;
+  height: auto;
   overflow: hidden;
 }
 .fez-img {
-  border-radius: 10%;
   height: 100%;
-  width: 100%;
+  width: auto;
 }
 .fez-front {
   animation: spinFront cubic-bezier(0.84, -0.01, 0.12, 1) 7s infinite;
@@ -233,7 +233,6 @@ button:active {
 @keyframes spinFront {
   0% {
     transform: scaleX(1);
-    /* content: url("./assets//imgs/Gomez.webp"); */
   }
 
   50% {
