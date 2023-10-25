@@ -55,10 +55,10 @@ function displayWarning() {
   gomezFrontImg.src = "./assets/imgs/Gomez.webp";
   imgContainer.appendChild(gomezFrontImg);
 
-  let gomezBackImg = document.createElement("img");
-  gomezBackImg.classList.add("fez-img", "fex-back");
-  gomezBackImg.src = "./assets/imgs/Gomex-back.jpg";
-  imgContainer.appendChild(gomezBackImg);
+  // let gomezBackImg = document.createElement("img");
+  // gomezBackImg.classList.add("fez-img", "fex-back");
+  // gomezBackImg.src = "./assets/imgs/Gomex-back.jpg";
+  // imgContainer.appendChild(gomezBackImg);
 
   //DESCRIPTON
   let description = document.createElement("p");
