@@ -237,7 +237,7 @@ button:active {
 
   50% {
     transform: scalex(-1);
-    /* content: url("./assets//imgs/Gomex-back.jpg"); */
+    content: url("./assets//imgs/Gomex-back.jpg");
     /* display: none; */
   }
 
